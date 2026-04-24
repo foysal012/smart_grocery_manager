@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_symbols_icons/symbols.dart';
 import 'package:smart_grocery_manager/bottom_nav_bar/data/data_visualization_screen.dart';
 import 'package:smart_grocery_manager/bottom_nav_bar/home/home_screen.dart';
 import 'package:smart_grocery_manager/bottom_nav_bar/more/more_screen.dart';
@@ -53,23 +54,23 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
           unselectedItemColor: Color(0xff94A3B8),
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: Icon(Symbols.home),
                 label: 'HOME'
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.satellite_outlined),
+                icon: Icon(Symbols.inventory_2),
                 label: 'STOCK'
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.sd_card_alert_sharp),
+                icon: Icon(Symbols.receipt_long),
                 label: 'SALES'
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.data_thresholding),
+                icon: Icon(Symbols.analytics),
                 label: 'DATA'
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.menu),
+                icon: Icon(Symbols.menu),
                 label: 'MORE'
             )
           ]
