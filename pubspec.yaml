@@ -37,6 +37,7 @@ dependencies:
   gap: ^3.0.1
   material_symbols_icons: ^4.2928.1
   d_chart: ^3.0.0
+  syncfusion_flutter_charts: ^33.2.4
 
 dev_dependencies:
   flutter_test:
