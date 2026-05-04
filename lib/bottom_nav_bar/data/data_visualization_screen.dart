@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import '../../widget/bottom_velocity_widget.dart';
+import '../../widget/profile_breakdown_widget.dart';
+import '../../widget/top_best_seller_widget.dart';
 
 class DataVisualizationScreen extends StatefulWidget {
   const DataVisualizationScreen({super.key});
@@ -783,159 +786,6 @@ class _DataVisualizationScreenState extends State<DataVisualizationScreen> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class ProfitBreakdownWidget extends StatelessWidget {
-  const ProfitBreakdownWidget({
-    super.key, required this.title, required this.value, required this.sliderValue ,required this.sliderClr
-  });
-
-  final String title;
-  final String value;
-  final double sliderValue;
-  final Color sliderClr;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20.0),
-      decoration: BoxDecoration(
-        color: Color(0xffF2F3FD),
-        borderRadius: BorderRadius.all(Radius.circular(15.0))
-      ),
-      child: Column(
-        children: [
-          Text(title,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: Colors.black38
-            ),
-          ),
-          Gap(5.0),
-
-          Text(value,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.black
-            ),
-          ),
-          Gap(5.0),
-
-          Slider(
-            min: 0,
-            max: 10,
-            value: sliderValue,
-            padding: EdgeInsets.all(0),
-            onChanged: (value) {},
-            activeColor: sliderClr,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class BottomVelocityWidget extends StatelessWidget {
-  const BottomVelocityWidget({
-    super.key,
-    required this.title,
-    required this.value
-  });
-
-  final String title;
-  final String value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            Container(
-              height: 50,
-              width: 50,
-              decoration: BoxDecoration(
-                color: Color(0xff9E4300),
-                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              ),
-            ),
-            Gap(10.0),
-
-            Text(title,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-                fontWeight: FontWeight.bold
-              ),
-            ),
-          ],
-        ),
-
-        Text(value,
-          style: TextStyle(
-            fontSize: 14,
-            color: Color(0xffBA1A1A),
-            fontWeight: FontWeight.bold
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class TopBestSellersWidget extends StatelessWidget {
-  const TopBestSellersWidget({
-    super.key,
-    required this.title1, required this.title2, required this.value
-  });
-
-  final String title1;
-  final String title2;
-  final double value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(title1,
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black
-              ),
-            ),
-
-            Text(title2,
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black38
-              ),
-            )
-          ],
-        ),
-        Gap(5.0),
-
-        Slider(
-            min: 0,
-            max: 10,
-            value: value,
-            padding: EdgeInsets.all(0),
-            // thumbColor: Colors.transparent,
-            onChanged: (value) {
-
-            },
-          activeColor: Colors.blue,
-        ),
-      ],
     );
   }
 }
