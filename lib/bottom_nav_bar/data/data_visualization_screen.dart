@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import '../../widget/bottom_velocity_widget.dart';
-import '../../widget/profile_breakdown_widget.dart';
-import '../../widget/top_best_seller_widget.dart';
+import '../../widget/data/bottom_velocity_widget.dart';
+import '../../widget/data/profile_breakdown_widget.dart';
+import '../../widget/data/profile_distribution_widget.dart';
+import '../../widget/data/top_best_seller_widget.dart';
 
 class DataVisualizationScreen extends StatefulWidget {
   const DataVisualizationScreen({super.key});
@@ -207,148 +208,31 @@ class _DataVisualizationScreenState extends State<DataVisualizationScreen> {
                         )
                     ),
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 20,
-                              width: 20,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.yellow
-                              ),
-                            ),
-                            Gap(10.0),
-
-                            Text('Electronics',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black
-                              ),
-                            ),
-                          ],
-                        ),
-
-                        Text('40%',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black
-                          ),
-                        )
-                      ],
+                    ProfitDistributionWidget(
+                      clr: Colors.yellow,
+                      title: 'Electronics',
+                      subtitle: '40%'
                     ),
                     Gap(10.0),
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 20,
-                              width: 20,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xff1D50D6)
-                              ),
-                            ),
-                            Gap(10.0),
-
-                            Text('Apparel',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black
-                              ),
-                            ),
-                          ],
-                        ),
-
-                        Text('30%',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black
-                          ),
-                        )
-                      ],
+                    ProfitDistributionWidget(
+                        clr: Color(0xff1D50D6),
+                        title: 'Apparel',
+                        subtitle: '30%'
                     ),
                     Gap(10.0),
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 20,
-                              width: 20,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xff3A5863)
-                              ),
-                            ),
-                            Gap(10.0),
-
-                            Text('Accessories',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black
-                              ),
-                            ),
-                          ],
-                        ),
-
-                        Text('20%',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black
-                          ),
-                        )
-                      ],
+                    ProfitDistributionWidget(
+                        clr: Color(0xff3A5863),
+                        title: 'Accessories',
+                        subtitle: '20%'
                     ),
                     Gap(10.0),
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 20,
-                              width: 20,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                // color: Color(0xff5EB2F4)
-                                color: Colors.blue
-                              ),
-                            ),
-                            Gap(10.0),
-
-                            Text('Equipment',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black
-                              ),
-                            ),
-                          ],
-                        ),
-
-                        Text('10%',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black
-                          ),
-                        )
-                      ],
+                    ProfitDistributionWidget(
+                        clr: Colors.blue,
+                        title: 'Equipment',
+                        subtitle: '10%'
                     ),
                     Gap(10.0)
                   ],
