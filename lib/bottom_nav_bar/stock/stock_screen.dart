@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../../widget/data/stock_card_widget.dart';
+
 class StockScreen extends StatefulWidget {
   const StockScreen({super.key});
 
@@ -192,125 +194,49 @@ class _StockScreenState extends State<StockScreen> {
               ),
               Gap(40.0),
               
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  border: Border(
-                    left: BorderSide(
-                      color: Color(0xffBA1A1A),
-                      width: 5.0,
-                    )
-                  )
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          height: 80,
-                          width: 80,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                            color: Colors.pink
-                          ),
-                        ),
-                        Gap(10.0),
-
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Luminal Chrono-Series X',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black
-                              ),
-                            ),
-                            Text('SKU: LMN-293-x * Batch:\nB2026-04',
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black38
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                    Gap(16.0),
-
-                    Column(
-                      children: [
-                        Text('42',
-                          style: TextStyle(
-                            fontSize: 24,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold
-                          ),
-                        ),
-                        Text('UNITS LEFT',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black38,
-                            fontWeight: FontWeight.bold
-                          ),
-                        )
-                      ],
-                    ),
-                    Gap(16.0),
-                    
-                    Row(
-                      children: [
-                        Container(
-                          height: 10.0,
-                          width: 10.0,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xffBA1A1A)
-                          ),
-                        ),
-                        Gap(10.0),
-
-                        Text('Caution: 12 Days Left',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xffBA1A1A)
-                          ),
-                        )
-                      ],
-                    ),
-                    Gap(5.0),
-
-                    Slider(
-                      padding: EdgeInsets.zero,
-                      max: 100,
-                      min: 0,
-                      value: 30.0,
-                      onChanged: (value) {
-
-                      },
-                      activeColor: Color(0xffBA1A1A),
-                      thumbColor: Colors.transparent,
-                    ),
-                    Gap(10.0),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Icon(Icons.edit),
-                        Gap(10.0),
-
-                        Icon(Icons.more_vert),
-                      ],
-                    ),
-
-                  ],
-                ),
+              StockCardWidget(
+                title: 'Luminal Chrono-Series X',
+                subTitle: 'SKU: LMN-293-X * Batch:\nB2026-04',
+                quantity: '42',
+                days: '4',
+                sliderValue: 18,
+                borderClr: Color(0xffBA1A1A),
+                sliderClr: Color(0xffBA1A1A)
               ),
-              Gap(16.0)
+              Gap(16.0),
+
+              StockCardWidget(
+                  title: 'Veda Organics Serum',
+                  subTitle: 'SKU: VDA-901-S * Batch:\nB2026-08',
+                  quantity: '118',
+                  days: '12',
+                  sliderValue: 39,
+                  borderClr: Color(0xff9E4300),
+                  sliderClr: Color(0xff9E4300)
+              ),
+              Gap(16.0),
+
+              StockCardWidget(
+                  title: 'Stellar Runner 4.0',
+                  subTitle: 'SKU: STR-552-R * Batch:\nB2026-11',
+                  quantity: '602',
+                  days: '144',
+                  sliderValue: 77,
+                  borderClr: Color(0xff006E2C),
+                  sliderClr: Color(0xff006E2C)
+              ),
+              Gap(16.0),
+
+              StockCardWidget(
+                  title: 'Aurora Condenser Mic',
+                  subTitle: 'SKU: AUR-112-M * Batch:\nB2026-09',
+                  quantity: '24',
+                  days: '82',
+                  sliderValue: 52,
+                  borderClr: Color(0xff006E2C),
+                  sliderClr: Color(0xff006E2C)
+              ),
+              Gap(16.0),
             ],
           ),
         ),
