@@ -250,38 +250,204 @@ class _SalesHistoryScreenState extends State<SalesHistoryScreen> {
                         ),
                         child: Row(
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.purple,
-                                  borderRadius: BorderRadius.all(Radius.circular(10.0))
+                            Expanded(
+                              flex:1,
+                              child: Container(
+                                height:90,
+                                width: 90,
+                                decoration: BoxDecoration(
+                                    color: Colors.purple,
+                                    borderRadius: BorderRadius.all(Radius.circular(10.0))
+                                ),
                               ),
                             ),
                             Gap(10.0),
 
-                            Column(
+                            Expanded(
+                              flex: 4,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Air Jordan 4 Retro "Oxidized Green"',
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w700
+                                    )
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text('Physical Product',
+                                          style: TextStyle(
+                                              fontSize: 14.0,
+                                              color: Colors.black38,
+                                              fontWeight: FontWeight.w500
+                                          )
+                                      ),
+
+                                      Text('Color: Green',
+                                          style: TextStyle(
+                                              fontSize: 14.0,
+                                              color: Colors.black38,
+                                              fontWeight: FontWeight.w500
+                                          )
+                                      ),
+                                    ],
+                                  ),
+
+                                  Text('Size: 46',
+                                    style: TextStyle(
+                                        fontSize: 14.0,
+                                        color: Colors.black38,
+                                        fontWeight: FontWeight.w500
+                                    )
+                                  ),
+                                  Gap(10.0),
+
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text('\$200',
+                                        style: TextStyle(
+                                            fontSize: 14.0,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w500
+                                        )
+                                      ),
+
+                                      Row(
+                                        children: [
+                                          Icon(Icons.remove_circle, color: Colors.red),
+                                          Gap(2.5),
+
+                                          Text('1',
+                                            style: TextStyle(
+                                                fontSize: 14.0,
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w500
+                                            )
+                                          ),
+                                          Gap(2.5),
+
+                                          Icon(Icons.add_circle, color: Colors.green)
+                                        ],
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Gap(20.0),
+
+                      Divider(
+                        indent: 10.0,
+                        endIndent: 10.0,
+                        height: 1.0,
+                        color: Colors.black38
+                      ),
+                      Gap(20.0),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Subtotal",
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.black38,
+                                  fontWeight: FontWeight.w500
+                              )
+                          ),
+
+                          Text('\$200',
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500
+                              )
+                          )
+                        ],
+                      ),
+                      Gap(10.0),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Tax (VAT 5%)",
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.black38,
+                                  fontWeight: FontWeight.w500
+                              )
+                          ),
+
+                          Text('\$48.15',
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500
+                              )
+                          )
+                        ],
+                      ),
+                      Gap(20.0),
+
+                      Container(
+                        height: 160,
+                        padding: EdgeInsets.all(15.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          color: Colors.white
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Text('Air Jordan 4 Retro "Oxidized Green"'),
+                                Text('Save as\nDraft',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.bold
+                                  ),
+                                ),
+
                                 Row(
                                   children: [
-                                    Text('Physical Product'),
-                                    Text('Color: Green'),
+                                    Icon(Icons.print, color: Colors.black38),
+                                    Gap(20.0),
+
+                                    Text('Print\nPreview',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontSize: 22,
+                                        color: Colors.black38,
+                                        fontWeight: FontWeight.bold
+                                      )
+                                    )
                                   ],
-                                ),
-                                Text('Size: 46'),
+                                )
                               ],
                             ),
                             Gap(10.0),
                             
-                            Row(
-                              children: [
-                                Text('\$200'),
-
-                                Row(
-                                  children: [
-
-                                  ],
+                            Container(
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.all(Radius.circular(10.0))
+                              ),
+                              alignment: AlignmentGeometry.center,
+                              child: Text('Finalize Sale',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white
                                 )
-                              ],
+                              ),
                             )
                           ],
                         ),
@@ -289,7 +455,6 @@ class _SalesHistoryScreenState extends State<SalesHistoryScreen> {
                     ],
                   ),
                 )
-
               ],
             ),
           ),
