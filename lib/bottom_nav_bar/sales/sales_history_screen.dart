@@ -217,6 +217,78 @@ class _SalesHistoryScreenState extends State<SalesHistoryScreen> {
                   quantityClr: Colors.green,
                 ),
                 Gap(40.0),
+                
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    color: Color(0xffF2F3FD)
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.shopping_cart_outlined, color: Color(0xff005BBF)),
+                          Gap(10.0),
+                          
+                          Text('Selected Items',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold
+                            )
+                          )
+                        ],
+                      ),
+                      Gap(10.0),
+
+                      Container(
+                        padding: EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(15.0))
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.purple,
+                                  borderRadius: BorderRadius.all(Radius.circular(10.0))
+                              ),
+                            ),
+                            Gap(10.0),
+
+                            Column(
+                              children: [
+                                Text('Air Jordan 4 Retro "Oxidized Green"'),
+                                Row(
+                                  children: [
+                                    Text('Physical Product'),
+                                    Text('Color: Green'),
+                                  ],
+                                ),
+                                Text('Size: 46'),
+                              ],
+                            ),
+                            Gap(10.0),
+                            
+                            Row(
+                              children: [
+                                Text('\$200'),
+
+                                Row(
+                                  children: [
+
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                )
 
               ],
             ),
