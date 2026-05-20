@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../widget/sales/sales_stock_summary_widget.dart';
+import '../../widget/sales/selected_items_widget.dart';
 
 class SalesHistoryScreen extends StatefulWidget {
   const SalesHistoryScreen({super.key});
@@ -242,104 +243,43 @@ class _SalesHistoryScreenState extends State<SalesHistoryScreen> {
                       ),
                       Gap(10.0),
 
-                      Container(
-                        padding: EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(15.0))
-                        ),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              flex:1,
-                              child: Container(
-                                height:90,
-                                width: 90,
-                                decoration: BoxDecoration(
-                                    color: Colors.purple,
-                                    borderRadius: BorderRadius.all(Radius.circular(10.0))
-                                ),
-                              ),
-                            ),
-                            Gap(10.0),
+                      SelectedItemsWidget(
+                        productName: 'Air Jordan 4 Retro "Oxidized Green"',
+                        productType: 'Physical Product',
+                        productColor: 'Green',
+                        productSize: '46',
+                        productPrice: '200',
+                        productQty: '1'
+                      ),
+                      Gap(10.0),
 
-                            Expanded(
-                              flex: 4,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Air Jordan 4 Retro "Oxidized Green"',
-                                    style: TextStyle(
-                                      fontSize: 16.0,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w700
-                                    )
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text('Physical Product',
-                                          style: TextStyle(
-                                              fontSize: 14.0,
-                                              color: Colors.black38,
-                                              fontWeight: FontWeight.w500
-                                          )
-                                      ),
+                      SelectedItemsWidget(
+                          productName: 'Video editing in Adobe Premier Pro',
+                          productType: 'Digital Goods',
+                          productColor: 'N/A',
+                          productSize: 'N/A',
+                          productPrice: '350',
+                          productQty: '1'
+                      ),
+                      Gap(10.0),
 
-                                      Text('Color: Green',
-                                          style: TextStyle(
-                                              fontSize: 14.0,
-                                              color: Colors.black38,
-                                              fontWeight: FontWeight.w500
-                                          )
-                                      ),
-                                    ],
-                                  ),
+                      SelectedItemsWidget(
+                          productName: 'Professional Candle Making Training Course.',
+                          productType: 'Live Training',
+                          productColor: 'N/A',
+                          productSize: 'N/A',
+                          productPrice: '600',
+                          productQty: '1'
+                      ),
+                      Gap(10.0),
 
-                                  Text('Size: 46',
-                                    style: TextStyle(
-                                        fontSize: 14.0,
-                                        color: Colors.black38,
-                                        fontWeight: FontWeight.w500
-                                    )
-                                  ),
-                                  Gap(10.0),
-
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text('\$200',
-                                        style: TextStyle(
-                                            fontSize: 14.0,
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.w500
-                                        )
-                                      ),
-
-                                      Row(
-                                        children: [
-                                          Icon(Icons.remove_circle, color: Colors.red),
-                                          Gap(2.5),
-
-                                          Text('1',
-                                            style: TextStyle(
-                                                fontSize: 14.0,
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.w500
-                                            )
-                                          ),
-                                          Gap(2.5),
-
-                                          Icon(Icons.add_circle, color: Colors.green)
-                                        ],
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                      SelectedItemsWidget(
+                          productName: 'The Red Science e-book',
+                          productType: 'Digital Product',
+                          productColor: 'N/A',
+                          productSize: 'N/A',
+                          productPrice: '800',
+                          productQty: '1'
                       ),
                       Gap(20.0),
 
@@ -362,7 +302,7 @@ class _SalesHistoryScreenState extends State<SalesHistoryScreen> {
                               )
                           ),
 
-                          Text('\$200',
+                          Text('\$1950',
                               style: TextStyle(
                                   fontSize: 16.0,
                                   color: Colors.black,
@@ -384,7 +324,7 @@ class _SalesHistoryScreenState extends State<SalesHistoryScreen> {
                               )
                           ),
 
-                          Text('\$48.15',
+                          Text('\$348.15',
                               style: TextStyle(
                                   fontSize: 16.0,
                                   color: Colors.black,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
-import '../../widget/data/stock_card_widget.dart';
+import '../../widget/stock/stock_card_widget.dart';
+import 'add_new_stock_screen.dart';
 
 class StockScreen extends StatefulWidget {
   const StockScreen({super.key});
@@ -240,6 +240,18 @@ class _StockScreenState extends State<StockScreen> {
             ],
           ),
         ),
+      ),
+
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddNewStockScreen())),
+        backgroundColor: Color(0xff005BBF),
+        label: Text('Add New',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold
+          ),
+        ),
+        icon: Icon(Icons.add, color: Colors.white),
       )
     );
   }
