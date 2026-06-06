@@ -167,6 +167,149 @@ class _MoreScreenState extends State<MoreScreen> {
                 ),
                 Gap(20.0),
 
+                Text('Warehouse Locations',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black
+                  ),
+                ),
+                Gap(5.0),
+
+                Row(
+                  children: [
+                    Text('Active nodes in your distribution network.',
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black38
+                      ),
+                    ),
+                    Gap(10.0),
+
+                    Text('Add Oub',
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff1A73E8),
+                      ),
+                    ),
+                  ],
+                ),
+                Gap(10.0),
+                
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    border: Border(
+                      left: BorderSide(
+                        color: Colors.green,
+                        width: 5
+                      ),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Central Oub A1',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black
+                            ),
+                          ),
+                          
+                          Icon(Icons.settings_applications_sharp, color: Colors.black38)
+                        ],
+                      ),
+                      Gap(5.0),
+
+                      Text('122 Industrial Lf ay, NJ',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black38
+                        ),
+                      ),
+                      Gap(5.0),
+
+                      Container(
+                        padding: EdgeInsets.all(5.0),
+                        decoration: BoxDecoration(
+                          color: Colors.greenAccent,
+                          borderRadius: BorderRadius.all(Radius.circular(10.0))
+                        ),
+                        child: Text('Primary'),
+                      )
+                    ],
+                  ),
+                ),
+                Gap(10.0),
+
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    border: Border(
+                      left: BorderSide(
+                          color: Colors.black38,
+                          width: 5
+                      ),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Lf est Coast Annex',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black
+                            ),
+                          ),
+
+                          Icon(Icons.settings_applications_sharp, color: Colors.black38)
+                        ],
+                      ),
+                      Gap(5.0),
+
+                      Text('889 Logistic Drive, CA',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black38
+                        ),
+                      ),
+                      Gap(5.0),
+
+                      Container(
+                        padding: EdgeInsets.all(5.0),
+                        decoration: BoxDecoration(
+                            color: Colors.black38,
+                            borderRadius: BorderRadius.all(Radius.circular(10.0))
+                        ),
+                        child: Text('Secondary'),
+                      )
+                    ],
+                  ),
+                ),
+                Gap(10.0),
+
+                Container(
+                  padding: EdgeInsets.all(15.0),
+                  decoration: BoxDecoration(
+                    color: Colors.black12,
+                    borderRadius: BorderRadius.all(Radius.circular(10.0))
+                  ),
+                ),
+
                 Container(
                   padding: EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
