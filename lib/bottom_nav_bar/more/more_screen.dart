@@ -308,6 +308,105 @@ class _MoreScreenState extends State<MoreScreen> {
                     color: Colors.black12,
                     borderRadius: BorderRadius.all(Radius.circular(10.0))
                   ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Notification Preferences',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black
+                        ),
+                      ),
+                      Gap(10.0),
+
+                      Container(
+                        padding: EdgeInsets.all(15.0),
+                        decoration: BoxDecoration(
+                            color: Colors.white60,
+                            borderRadius: BorderRadius.all(Radius.circular(10.0))
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(15.0),
+                              decoration: BoxDecoration(
+                                  color: Colors.red.withValues(alpha: 0.2),
+                                  borderRadius: BorderRadius.all(Radius.circular(10.0))
+                              ),
+                              child: Icon(Icons.warning, color: Colors.red,),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Low Stock Alerts',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black
+                                  ),
+                                ),
+
+                                Text('Notify when items fall below\nsafety threshold.',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black38
+                                  ),
+                                )
+                              ],
+                            ),
+                            Switch(value: true, onChanged: (value) {})
+                          ],
+                        ),
+                      ),
+
+                      Gap(10.0),
+
+                      Container(
+                        padding: EdgeInsets.all(15.0),
+                        decoration: BoxDecoration(
+                            color: Colors.white60,
+                            borderRadius: BorderRadius.all(Radius.circular(10.0))
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(15.0),
+                              decoration: BoxDecoration(
+                                  color: Colors.red.withValues(alpha: 0.2),
+                                  borderRadius: BorderRadius.all(Radius.circular(10.0))
+                              ),
+                              child: Icon(Icons.close_outlined, color: Colors.red,),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Expiry u Ernings',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black
+                                  ),
+                                ),
+
+                                Text('After 30 days before product\nexpiration.',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black38
+                                  ),
+                                )
+                              ],
+                            ),
+                            Switch(value: true, onChanged: (value) {})
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
 
                 Container(
