@@ -486,60 +486,17 @@ class _MoreScreenState extends State<MoreScreen> {
                       Gap(20.0),
 
                       Container(
-                        height: 160,
-                        padding: EdgeInsets.all(15.0),
+                        height: 50,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                            color: Colors.white
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.all(Radius.circular(10.0))
                         ),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text('Save as\nDraft',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.blue,
-                                      fontWeight: FontWeight.bold
-                                  ),
-                                ),
-
-                                Row(
-                                  children: [
-                                    Icon(Icons.print, color: Colors.black38),
-                                    Gap(20.0),
-
-                                    Text('Print\nPreview',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            color: Colors.black38,
-                                            fontWeight: FontWeight.bold
-                                        )
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                            Gap(10.0),
-
-                            Container(
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.all(Radius.circular(10.0))
-                              ),
-                              alignment: AlignmentGeometry.center,
-                              child: Text('Finalize Sale',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.white
-                                  )
-                              ),
+                        alignment: AlignmentGeometry.center,
+                        child: Text('Finalize Sale',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white
                             )
-                          ],
                         ),
                       )
                     ],
