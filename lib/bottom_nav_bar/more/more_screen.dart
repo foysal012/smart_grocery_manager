@@ -300,7 +300,7 @@ class _MoreScreenState extends State<MoreScreen> {
                     ],
                   ),
                 ),
-                Gap(10.0),
+                Gap(15.0),
 
                 Container(
                   padding: EdgeInsets.all(15.0),
@@ -361,7 +361,6 @@ class _MoreScreenState extends State<MoreScreen> {
                           ],
                         ),
                       ),
-
                       Gap(10.0),
 
                       Container(
@@ -408,100 +407,140 @@ class _MoreScreenState extends State<MoreScreen> {
                     ],
                   ),
                 ),
+                Gap(15.0),
 
                 Container(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      color: Color(0xffF2F3FD)
+                      color: Colors.black12,
+                      borderRadius: BorderRadius.all(Radius.circular(10.0))
                   ),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
-                          Icon(Icons.shopping_cart_outlined, color: Color(0xff005BBF)),
+                          Icon(Icons.help),
                           Gap(10.0),
 
-                          Text('Selected Items',
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold
-                              )
-                          )
+                          Text('App Support',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black
+                            ),
+                          ),
                         ],
                       ),
-                      Gap(10.0),
-
-                      Divider(
-                          indent: 10.0,
-                          endIndent: 10.0,
-                          height: 1.0,
-                          color: Colors.black38
-                      ),
-                      Gap(20.0),
+                      Gap(5.0),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Subtotal",
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.black38,
-                                  fontWeight: FontWeight.w500
-                              )
-                          ),
-
-                          Text('\$1950',
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500
-                              )
-                          )
-                        ],
-                      ),
-                      Gap(10.0),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Tax (VAT 5%)",
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.black38,
-                                  fontWeight: FontWeight.w500
-                              )
-                          ),
-
-                          Text('\$348.15',
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500
-                              )
-                          )
-                        ],
-                      ),
-                      Gap(20.0),
-
-                      Container(
-                        height: 50,
-                        decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.all(Radius.circular(10.0))
-                        ),
-                        alignment: AlignmentGeometry.center,
-                        child: Text('Finalize Sale',
+                          Text('Knowledge Base',
                             style: TextStyle(
                                 fontSize: 16,
-                                color: Colors.white
-                            )
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black38
+                            ),
+                          ),
+
+                          Icon(Icons.link),
+                        ],
+                      ),
+
+                      Gap(5.0),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Submit a Ticket',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black38
+                            ),
+                          ),
+
+                          Icon(Icons.email),
+                        ],
+                      ),
+                      Gap(5.0),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Developer API',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black38
+                            ),
+                          ),
+
+                          Icon(Icons.library_add_check),
+                        ],
+                      ),
+
+
+                    ],
+                  ),
+                ),
+                Gap(15.0),
+
+                Container(
+                  padding: EdgeInsets.all(15.0),
+                  decoration: BoxDecoration(
+                      color: Colors.black12,
+                      borderRadius: BorderRadius.all(Radius.circular(10.0))
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Precision Ledger v2.4.0',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black
+                        ),
+                      ),
+                      Gap(5.0),
+
+                      Text('Stable Enterprise Build. Your data is encrypted with AES-256 and backed updaily at 02:00 UTC.',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black38
                         ),
                       )
                     ],
                   ),
+                ),
+                Gap(15.0),
+
+                Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: Colors.pinkAccent.withValues(alpha: 0.2),
+                      borderRadius: BorderRadius.all(Radius.circular(10.0))
+                  ),
+                  alignment: AlignmentGeometry.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.logout, color: Colors.red),
+                      Gap(10.0),
+
+                      Text('Logout from Session',
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.red
+                          )
+                      ),
+                    ],
+                  ),
                 )
+
               ],
             ),
           ),
