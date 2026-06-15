@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../../widget/more/app_support_title_widget.dart';
+import '../../widget/more/notification_preference_widget.dart';
+import '../../widget/more/warehouse_location_widget.dart';
+
 class MoreScreen extends StatefulWidget {
   const MoreScreen({super.key});
 
@@ -198,107 +202,21 @@ class _MoreScreenState extends State<MoreScreen> {
                 ),
                 Gap(10.0),
                 
-                Container(
-                  padding: EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    border: Border(
-                      left: BorderSide(
-                        color: Colors.green,
-                        width: 5
-                      ),
-                    ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Central Oub A1',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black
-                            ),
-                          ),
-                          
-                          Icon(Icons.settings_applications_sharp, color: Colors.black38)
-                        ],
-                      ),
-                      Gap(5.0),
-
-                      Text('122 Industrial Lf ay, NJ',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black38
-                        ),
-                      ),
-                      Gap(5.0),
-
-                      Container(
-                        padding: EdgeInsets.all(5.0),
-                        decoration: BoxDecoration(
-                          color: Colors.greenAccent,
-                          borderRadius: BorderRadius.all(Radius.circular(10.0))
-                        ),
-                        child: Text('Primary'),
-                      )
-                    ],
-                  ),
+                WarehouseLocationWidget(
+                  title: 'Central Oub A1',
+                  subTitle: '122 Industrial Lf ay, NJ',
+                  tag: 'Primary',
+                  tagColor: Colors.greenAccent,
+                  sideColor: Colors.green
                 ),
                 Gap(10.0),
 
-                Container(
-                  padding: EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    border: Border(
-                      left: BorderSide(
-                          color: Colors.black38,
-                          width: 5
-                      ),
-                    ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Lf est Coast Annex',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black
-                            ),
-                          ),
-
-                          Icon(Icons.settings_applications_sharp, color: Colors.black38)
-                        ],
-                      ),
-                      Gap(5.0),
-
-                      Text('889 Logistic Drive, CA',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black38
-                        ),
-                      ),
-                      Gap(5.0),
-
-                      Container(
-                        padding: EdgeInsets.all(5.0),
-                        decoration: BoxDecoration(
-                            color: Colors.black38,
-                            borderRadius: BorderRadius.all(Radius.circular(10.0))
-                        ),
-                        child: Text('Secondary'),
-                      )
-                    ],
-                  ),
+                WarehouseLocationWidget(
+                    title: 'Lf est Coast Annex',
+                    subTitle: '889 Logistic Drive, CA',
+                    tag: 'Secondary',
+                    tagColor: Colors.black38,
+                    sideColor: Colors.black38
                 ),
                 Gap(15.0),
 
@@ -320,90 +238,22 @@ class _MoreScreenState extends State<MoreScreen> {
                       ),
                       Gap(10.0),
 
-                      Container(
-                        padding: EdgeInsets.all(15.0),
-                        decoration: BoxDecoration(
-                            color: Colors.white60,
-                            borderRadius: BorderRadius.all(Radius.circular(10.0))
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(15.0),
-                              decoration: BoxDecoration(
-                                  color: Colors.red.withValues(alpha: 0.2),
-                                  borderRadius: BorderRadius.all(Radius.circular(10.0))
-                              ),
-                              child: Icon(Icons.warning, color: Colors.red,),
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Low Stock Alerts',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black
-                                  ),
-                                ),
-
-                                Text('Notify when items fall below\nsafety threshold.',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.black38
-                                  ),
-                                )
-                              ],
-                            ),
-                            Switch(value: true, onChanged: (value) {})
-                          ],
-                        ),
+                      NotificationPreferenceWidget(
+                        iconData: Icons.warning,
+                        title: 'Low Stock Alerts',
+                        subTitle: 'Notify when items fall below\nsafety threshold.',
+                        isTrue: true,
+                        isTrueFunction: (value) {}
                       ),
                       Gap(10.0),
 
-                      Container(
-                        padding: EdgeInsets.all(15.0),
-                        decoration: BoxDecoration(
-                            color: Colors.white60,
-                            borderRadius: BorderRadius.all(Radius.circular(10.0))
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(15.0),
-                              decoration: BoxDecoration(
-                                  color: Colors.red.withValues(alpha: 0.2),
-                                  borderRadius: BorderRadius.all(Radius.circular(10.0))
-                              ),
-                              child: Icon(Icons.close_outlined, color: Colors.red,),
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Expiry u Ernings',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black
-                                  ),
-                                ),
-
-                                Text('After 30 days before product\nexpiration.',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.black38
-                                  ),
-                                )
-                              ],
-                            ),
-                            Switch(value: true, onChanged: (value) {})
-                          ],
-                        ),
-                      )
+                      NotificationPreferenceWidget(
+                          iconData: Icons.close_outlined,
+                          title: 'Expiry u Ernings',
+                          subTitle: 'After 30 days before product\nexpiration.',
+                          isTrue: false,
+                          isTrueFunction: (value) {}
+                      ),
                     ],
                   ),
                 ),
@@ -434,55 +284,23 @@ class _MoreScreenState extends State<MoreScreen> {
                       ),
                       Gap(5.0),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Knowledge Base',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black38
-                            ),
-                          ),
-
-                          Icon(Icons.link),
-                        ],
-                      ),
-
-                      Gap(5.0),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Submit a Ticket',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black38
-                            ),
-                          ),
-
-                          Icon(Icons.email),
-                        ],
+                      AppSupportTileWidget(
+                        title: 'Knowledge Base',
+                        iconData: Icons.link
                       ),
                       Gap(5.0),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Developer API',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black38
-                            ),
-                          ),
-
-                          Icon(Icons.library_add_check),
-                        ],
+                      AppSupportTileWidget(
+                          title: 'Submit a Ticket',
+                          iconData: Icons.email
                       ),
+                      Gap(5.0),
 
-
+                      AppSupportTileWidget(
+                          title: 'Developer API',
+                          iconData: Icons.library_add_check
+                      ),
+                      Gap(5.0)
                     ],
                   ),
                 ),
@@ -528,13 +346,14 @@ class _MoreScreenState extends State<MoreScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.logout, color: Colors.red),
+                      Icon(Icons.logout, color: Color(0xff93000A)),
                       Gap(10.0),
 
                       Text('Logout from Session',
                           style: TextStyle(
                               fontSize: 16,
-                              color: Colors.red
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff93000A)
                           )
                       ),
                     ],
