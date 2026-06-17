@@ -2,7 +2,7 @@ import 'package:d_chart/d_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import 'package:smart_grocery_manager/model/transection_model.dart';
+import '../../model/transection_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

@@ -12,7 +12,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final emailTextController = TextEditingController();
   final passwordTextController = TextEditingController();
-
   bool isRemember = false;
 
   @override
@@ -175,7 +174,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(15.0)),
                       color: Color(0xff005BBF),
                     ),
-                    // alignment: AlignmentGeometry.center,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
