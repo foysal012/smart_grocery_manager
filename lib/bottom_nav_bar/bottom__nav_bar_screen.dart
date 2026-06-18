@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import 'package:smart_grocery_manager/bottom_nav_bar/data/data_visualization_screen.dart';
-import 'package:smart_grocery_manager/bottom_nav_bar/home/home_screen.dart';
-import 'package:smart_grocery_manager/bottom_nav_bar/more/more_screen.dart';
-import 'package:smart_grocery_manager/bottom_nav_bar/sales/sales_history_screen.dart';
-import 'package:smart_grocery_manager/bottom_nav_bar/stock/stock_screen.dart';
+import 'data/data_visualization_screen.dart';
+import 'home/home_screen.dart';
+import 'more/more_screen.dart';
+import 'sales/sales_history_screen.dart';
+import 'stock/stock_screen.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
   const BottomNavBarScreen({super.key});

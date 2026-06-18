@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import '../../model/data/chart_data.dart';
+import '../../model/data/chart_data1.dart';
+import '../../model/data/sales_data.dart';
 import '../../widget/data/bottom_velocity_widget.dart';
 import '../../widget/data/profile_breakdown_widget.dart';
 import '../../widget/data/profile_distribution_widget.dart';
@@ -672,23 +675,4 @@ class _DataVisualizationScreenState extends State<DataVisualizationScreen> {
       ),
     );
   }
-}
-
-class ChartData {
-  ChartData(this.x, this.y);
-  final double x;
-  final double? y;
-}
-
-class SalesData {
-  SalesData(this.year, this.sales);
-  final String year;
-  final double sales;
-}
-
-class ChartData1 {
-  ChartData1(this.x, this.y, [this.color]);
-  final String x;
-  final double y;
-  final Color? color;
 }

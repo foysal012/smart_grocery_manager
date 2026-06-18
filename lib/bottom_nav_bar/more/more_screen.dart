@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
 import '../../widget/more/app_support_title_widget.dart';
 import '../../widget/more/notification_preference_widget.dart';
 import '../../widget/more/warehouse_location_widget.dart';
