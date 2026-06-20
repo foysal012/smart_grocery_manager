@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import '../../widget/sales/sales_stock_summary_widget.dart';
-import '../../widget/sales/selected_items_widget.dart';
+import '../../../widget/sales/sales_stock_summary_widget.dart';
+import '../../../widget/sales/selected_items_widget.dart';
 
 class SalesHistoryScreen extends StatefulWidget {
   const SalesHistoryScreen({super.key});

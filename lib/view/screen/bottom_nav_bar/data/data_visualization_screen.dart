@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import '../../model/data/chart_data.dart';
-import '../../model/data/chart_data1.dart';
-import '../../model/data/sales_data.dart';
-import '../../widget/data/bottom_velocity_widget.dart';
-import '../../widget/data/profile_breakdown_widget.dart';
-import '../../widget/data/profile_distribution_widget.dart';
-import '../../widget/data/top_best_seller_widget.dart';
+import '../../../../model/data/chart_data.dart';
+import '../../../../model/data/chart_data1.dart';
+import '../../../../model/data/sales_data.dart';
+import '../../../widget/data/bottom_velocity_widget.dart';
+import '../../../widget/data/profile_breakdown_widget.dart';
+import '../../../widget/data/profile_distribution_widget.dart';
+import '../../../widget/data/top_best_seller_widget.dart';
 
 class DataVisualizationScreen extends StatefulWidget {
   const DataVisualizationScreen({super.key});

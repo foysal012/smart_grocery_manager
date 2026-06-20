@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import '../../widget/custom_text_from_field.dart';
+import '../../../widget/custom_text_from_field.dart';
 
 class AddNewStockScreen extends StatefulWidget {
   const AddNewStockScreen({super.key});

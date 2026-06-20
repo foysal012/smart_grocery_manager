@@ -1,8 +1,11 @@
 import 'package:d_chart/d_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import '../../model/transection_model.dart';
+import 'package:smart_grocery_manager/view_model/home/home_view_model.dart';
+import '../../../../model/home/quick_commands_model.dart';
+import '../../../../model/home/transection_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,68 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  List<TransectionModel> transectionList = [
-    TransectionModel(
-      iconData: Symbols.add_shopping_cart,
-      title: 'Sale #849201',
-      subTitle: '2 mins ago * 3 Items',
-      amount: -154.00
-    ),
-    TransectionModel(
-        iconData: Symbols.mobile_check,
-        title: 'Stock Update:Beverages',
-        subTitle: '1 hour ago * Warehouse A',
-        amount: 500.00
-    ),
-    TransectionModel(
-        iconData: Symbols.assignment_return,
-        title: 'Refund #849188',
-        subTitle: '3 hours ago * Defective Item',
-        amount: -22.50
-    ),
-    TransectionModel(
-        iconData: Symbols.add_shopping_cart,
-        title: 'Sale #849201',
-        subTitle: '2 mins ago * 3 Items',
-        amount: -154.00
-    ),
-    TransectionModel(
-        iconData: Symbols.mobile_check,
-        title: 'Stock Update:Beverages',
-        subTitle: '1 hour ago * Warehouse A',
-        amount: 500.00
-    ),
-    TransectionModel(
-        iconData: Symbols.assignment_return,
-        title: 'Refund #849188',
-        subTitle: '3 hours ago * Defective Item',
-        amount: -22.50
-    ),
-    TransectionModel(
-        iconData: Symbols.add_shopping_cart,
-        title: 'Sale #849201',
-        subTitle: '2 mins ago * 3 Items',
-        amount: -154.00
-    ),
-    TransectionModel(
-        iconData: Symbols.mobile_check,
-        title: 'Stock Update:Beverages',
-        subTitle: '1 hour ago * Warehouse A',
-        amount: 500.00
-    ),
-    TransectionModel(
-        iconData: Symbols.assignment_return,
-        title: 'Refund #849188',
-        subTitle: '3 hours ago * Defective Item',
-        amount: -22.50
-    ),
-    TransectionModel(
-        iconData: Symbols.add_shopping_cart,
-        title: 'Sale #849201',
-        subTitle: '2 mins ago * 3 Items',
-        amount: -154.00
-    )
-  ];
+  final homeController = Get.put(HomeViewModel());
 
   @override
   Widget build(BuildContext context) {
@@ -456,24 +398,53 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Gap(12.0),
 
-                    SizedBox(
-                      height: 60,
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: 10,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) => Container(
-                            height: 48,
-                            width: 150,
-                            margin: EdgeInsets.only(right: 15.30),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                color: index == 0 ? Color(0xff005BBF):Color(0xffE6E8F2)
-                              // color: Color(0xff005BBF)
-                            ),
-                          )
-                      ),
-                    ),
+                    GetBuilder<HomeViewModel>(
+                      init: homeController,
+                      builder: (controller) {
+                      return SizedBox(
+                        height: 60,
+                        child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: homeController.quickCommandList.length,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) {
+                              final dataInfo = homeController.quickCommandList[index];
+                              return GestureDetector(
+                                onTap: () {
+                                  homeController.setQuickCommand(dataInfo);
+                                },
+                                child: Container(
+                                  height: 48,
+                                  width: 150,
+                                  margin: EdgeInsets.only(right: 15.30),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                      // color: index == 0 ? Color(0xff005BBF):Color(0xffE6E8F2)
+                                      color: homeController.quickCommandData?.title == dataInfo.title ? Color(0xff005BBF):Color(0xffE6E8F2)
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      // Icon(dataInfo.iconData, color: index == 0 ? Colors.white : Colors.black54),
+                                      Icon(dataInfo.iconData, color: homeController.quickCommandData?.title == dataInfo.title ? Colors.white : Colors.black54),
+                                      Gap(10.0),
+
+                                      Text('${dataInfo.title}',
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            // color: index == 0 ? Colors.white : Colors.black54,
+                                            color: homeController.quickCommandData?.title == dataInfo.title ? Colors.white : Colors.black54,
+                                            fontWeight: FontWeight.bold
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              );
+                            }
+                        ),
+                      );
+                    },),
                     Gap(10.0)
                   ]
                 )
@@ -511,51 +482,55 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Gap(16.0),
 
-                    Expanded(
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: transectionList.length,
-                          scrollDirection: Axis.vertical,
-                          physics: AlwaysScrollableScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            final data = transectionList[index];
-                            return ListTile(
-                              leading: Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                    color: Color(0xffE0E2EC)
+                    GetBuilder<HomeViewModel>(
+                      init: homeController,
+                      builder: (controller) {
+                      return Expanded(
+                        child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: homeController.transectionList.length,
+                            scrollDirection: Axis.vertical,
+                            physics: AlwaysScrollableScrollPhysics(),
+                            itemBuilder: (context, index) {
+                              final data = homeController.transectionList[index];
+                              return ListTile(
+                                leading: Container(
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                      color: Color(0xffE0E2EC)
+                                  ),
+                                  child: Icon(data.iconData, color: data.amount > 0.0 ? Color(0xff005BBF) : Color(0xffBA1A1A)),
                                 ),
-                                child: Icon(data.iconData, color: data.amount > 0.0 ? Color(0xff005BBF) : Color(0xffBA1A1A)),
-                              ),
 
-                              title: Text('${data.title}',
+                                title: Text('${data.title}',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Color(0xff191C23),
+                                        fontWeight: FontWeight.bold
+                                    )
+                                ),
+
+                                subtitle: Text('${data.subTitle}',
+                                    style: TextStyle(
+                                        fontSize: 10,
+                                        color: Color(0xff414754),
+                                        fontWeight: FontWeight.bold
+                                    )
+                                ),
+
+                                trailing: Text('${data.amount}',
                                   style: TextStyle(
                                       fontSize: 14,
-                                      color: Color(0xff191C23),
-                                      fontWeight: FontWeight.bold
-                                  )
-                              ),
-
-                              subtitle: Text('${data.subTitle}',
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      color: Color(0xff414754),
-                                      fontWeight: FontWeight.bold
-                                  )
-                              ),
-
-                              trailing: Text('${data.amount}',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: data.amount > 0.0 ? Color(0xff006E2C) : Color(0xffBA1A1A)
+                                      color: data.amount > 0.0 ? Color(0xff006E2C) : Color(0xffBA1A1A)
+                                  ),
                                 ),
-                              ),
-                            );
-                          }
-                      ),
-                    )
+                              );
+                            }
+                        ),
+                      );
+                    },)
                   ],
                 ),
               ),
