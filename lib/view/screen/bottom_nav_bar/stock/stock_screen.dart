@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import '../../widget/stock/stock_card_widget.dart';
+import '../../../widget/stock/stock_card_widget.dart';
 import 'add_new_stock_screen.dart';
 
 class StockScreen extends StatefulWidget {
