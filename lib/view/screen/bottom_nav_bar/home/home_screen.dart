@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import 'package:smart_grocery_manager/view_model/home/home_view_model.dart';
-import '../../../../model/home/quick_commands_model.dart';
-import '../../../../model/home/transection_model.dart';
+import '../../../../view_model/home/home_view_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -64,41 +62,6 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Gap(40.0),
-
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     Row(
-              //       children: [
-              //         // Container(
-              //         //   height: 50,
-              //         //   width: 50,
-              //         //   padding: EdgeInsets.all(2.5),
-              //         //   decoration: BoxDecoration(
-              //         //     shape: BoxShape.circle,
-              //         //     border: Border.all(
-              //         //       width: 2,
-              //         //       color: Color(0xff005BBF)
-              //         //     ),
-              //         //     image: DecorationImage(image: AssetImage('assets/images/grocery_cart_light.png'))
-              //         //   ),
-              //         // ),
-              //         // Gap(10.0),
-              //
-              //         Text('Smart Grocery Manager',
-              //           style: TextStyle(
-              //             fontSize: 20.0,
-              //             color: Color(0xff1A73E8),
-              //             fontWeight: FontWeight.bold
-              //           ),
-              //         )
-              //       ],
-              //     ),
-              //
-              //     Icon(Icons.notifications, size: 25.0)
-              //   ],
-              // ),
-              // Gap(16.0),
 
               Container(
                 height: 170,
@@ -419,20 +382,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                   margin: EdgeInsets.only(right: 15.30),
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                      // color: index == 0 ? Color(0xff005BBF):Color(0xffE6E8F2)
                                       color: homeController.quickCommandData?.title == dataInfo.title ? Color(0xff005BBF):Color(0xffE6E8F2)
                                   ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      // Icon(dataInfo.iconData, color: index == 0 ? Colors.white : Colors.black54),
                                       Icon(dataInfo.iconData, color: homeController.quickCommandData?.title == dataInfo.title ? Colors.white : Colors.black54),
                                       Gap(10.0),
 
                                       Text('${dataInfo.title}',
                                         style: TextStyle(
                                             fontSize: 18,
-                                            // color: index == 0 ? Colors.white : Colors.black54,
                                             color: homeController.quickCommandData?.title == dataInfo.title ? Colors.white : Colors.black54,
                                             fontWeight: FontWeight.bold
                                         ),
